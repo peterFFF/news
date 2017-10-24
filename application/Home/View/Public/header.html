@@ -1,0 +1,45 @@
+<!-- 通用顶部导航开始-->
+<div id="top-navi-wrap">
+	<div class="clearfix" id="top-navi">
+		<div class="side-left">
+		<foreach name='news3'  item='v'>
+			<a href="__APP__/Articles/index/articleId/{$v.articleId}" target="_blank">{$v["title"],15|truncate}</a>
+		</foreach>	
+		</div>
+		<div class="side-right">
+			<if condition="$userName==''">
+			<a href="__APP__/Login/index" target="_blank" class="top-nav-login-title">登录</a>			
+			<div class="top-nav-select-title">
+				<a href="__APP__/Register/index" target="_blank">免费注册</a>
+			<else />	
+			<div class="top-nav-select-title">
+			<a href="__APP__/Register/index" target="_blank">免费注册</a>
+				<span>您好，<a href="#" class="current-user">{$userName}</a></span>
+				<a href="__APP__/Login/leave">退出</a>
+			</if>	
+			</div>
+		</div>
+	</div>
+</div>
+<!-- 通用顶部导航结束 -->
+<!--header start-->
+<div class="clear" id="header">
+		<div id="logo"><a href="#" title="换一个角度看新闻"></a></div>
+		<div id="search-bar">
+			<form name="search-form" action="__APP__/Newstype/search" method="get">
+				<input type="text" name="keywords" id="keywords" value="党报连发治军铁腕新政"/>
+				<input type="submit" value="" id="search-submit-button"/>
+			</form>
+		</div>
+</div>
+<!--header end-->
+<!--导航开始-->
+<div id="navigation">
+	<ul class="clear">
+		<li><a href="__APP__" >首页</a></li>
+		<foreach name='newsTypes'  item='v'>
+		<li><a href="__APP__/Newstype/index/typeId/{$v.typeId}">{$v.typeName}</a></li>
+		</foreach>
+	</ul>
+</div>
+<!--导航结束-->

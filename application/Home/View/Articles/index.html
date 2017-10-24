@@ -1,0 +1,132 @@
+<!DOCTYPE html >
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$fetchone.title}</title>
+<link type="text/css" rel="stylesheet" media="all" href="__ROOT__/public/css/reset.css"/>
+<link type="text/css" rel="stylesheet" media="all" href="__ROOT__/public/css/layout.css"/>
+<link type="text/css" rel="stylesheet" media="all" href="__ROOT__/public/css/common.css"/>
+<script src="__ROOT__/library/jquery/jquery-1.10.0.js"></script>
+<script src="__ROOT__/library/kindeditor/kindeditor.js"></script>
+<script>
+	function rvalidate(){
+		var username=$("#username").val();
+		var password=$("#password").val();
+		var content=editor.html();
+		if(content==""){
+			alert("内容不能为空");
+			return false;
+		}else if(username==""){
+			alert("用户名不能为空");
+			return false;
+		}else if(password==""){
+			alert("密码不能为空");
+			return false;
+		}
+	}
+	function login(){
+		var username=$("#username").val();
+		var password=$("#password").val();
+		if(username==""){
+			alert('用户名不能为空');
+			return false;
+		}else if(password==""){
+			alert('密码不能为空');
+			return false;
+		}else{
+			//ajax验证
+			$.ajax({
+				type:"post",
+				url:"__APP__/Login/loginx",
+				data:"username="+username+"&password="+password,
+				success:function(res){
+					//接收服务器返回的结果
+					if(res==1){
+						$("#userSpan").html(username);
+						$('#loginDiv1').hide();
+						$('#loginDiv2').hide();
+						$('#loginDiv3').hide();
+						$('#loginDiv4').show();
+						$('.side-right').load("top.html .side-right");
+					}else{
+						alert('用户名和密码不正确');
+					}
+				}
+			});
+		}
+	};
+	
+		var editor;
+		KindEditor.ready(function(e){
+			editor=e.create("[name=content]",{
+				"width":"645px",
+				"height":"100px",
+				"items":['undo','redo','emoticons'],
+				"resizeType":"0",
+				"themeType":"common"
+			});
+		});
+</script>
+</head>
+<body>
+<!-- 通用顶部导航开始-->
+<include file="Public:header"/>
+<!--导航结束-->
+<div class="section">
+	
+	<div class="clear">
+		<div class="side-left-680" id="article">		
+			<h1 class="article-title">{$fetchone.title}</h1>
+			<div class="article-info">{$fetchone.dateandtime|date="Y-m-d H:i:s",###}<a href="__APP__/Mess/index/articleId/{$fetchone.articleId}">评论(<span id="reviews">{$getReviews}</span>)</a></div>
+			<if condition="$fetchone.imagepath neq NULL">
+			<div align=center><img src="__ROOT__/public/{$fetchone.imagepath}" alt=""  width="680" height="300"/></div>
+			<else />
+			<div align=center><img src="__ROOT__/public/photoview/logo.png" alt=""  width="680" height="300"/></div>
+			</if>
+			<div class="article-body">
+				{$fetchone.content}
+			</div>
+			<div id="comment">
+				<form name="frm" action="__APP__/Articles/add/articleId/{$fetchone['articleId']}" method="post">
+				<p class="comment-count"><a href="__APP__/Mess/index/articleId/{$fetchone.articleId}">已有<span id="reviews">{$getReviews}</span>条评论，共<span>{$num}人</span>参与</a></p>
+				<textarea name="content" class="comment-content" id="content"></textarea>
+				<div class="comment-user-cont clear">
+					<if condition="$userName neq NULL">
+						<div id="loginDiv1" style="display:none" class="comment-user-username"><input type="text" name="username"  id="username"   class="comment-input" value=""/></div>
+						<div id="loginDiv2" style="display:none" class="comment-user-password"><input type="password" name="password" id="password" class="comment-input" value=""/></div>
+						<div id="loginDiv3" style="display:none" class="comment-user-link"><input type="checkbox" name="remember" checked="checked" value="1"/> 下次自动登录<a href="javascript:login()">登录</a><a href="#">忘记密码？</a></div>
+						<div id="loginDiv4" style="display:block" class="comment-user-logined">
+							<span><a id="userSpan" href="#">{$userName}</a></span>
+							<span><a href="__APP__/Login/leave/articleId/{$fetchone['articleId']}">退出</a></span>
+							<input type="submit" value="发布" class="comment-publishing-btn" onclick="return rvalidate()"/>
+						</div>
+					<else />
+						<div id="loginDiv1" style="display:block" class="comment-user-username"><input type="text" name="username"  id="username"   class="comment-input" value=""/></div>
+						<div id="loginDiv2" style="display:block" class="comment-user-password"><input type="password" name="password" id="password" class="comment-input" value=""/></div>
+						<div id="loginDiv3" style="display:block" class="comment-user-link"><input type="checkbox" name="remember" checked="checked" value="1"/> 下次自动登录<a href="javascript:login()">登录</a><a href="#">忘记密码？</a></div>
+						<div id="loginDiv4" style="display:none" class="comment-user-logined">
+							<span><a id="userSpan" href="#">{$userName}</a></span>
+							<span><a href="__APP__/Login/leave/articleId/{$fetchone['articleId']}">退出</a></span>
+							<input type="submit" value="发布" class="comment-publishing-btn" onclick="return rvalidate()" />
+						</div>
+					</if>
+				</div>
+				</form>
+			</div>
+		</div>
+		<div class="side-right-300">
+			<h3 class="hot-title">24小时排行榜</h3>
+			<ol id="ol1" class="section-part-list-with-num">
+			<foreach name='fetchHints24h' item='v' key='k'>       			
+       				<li><span class="top-num num{$k+1}"><if condition='$k lt 9'>0</if>{$k+1}</span><a href="news.php?articleId={$v.articleId}" target="_blank">{$v["title"],18|truncate}</a></li>
+       		</foreach>				
+			</ol>				
+		</div>
+	</div>
+</div>
+<!--版权区 start-->
+<include file="Public:foot"/>
+<!--版权区 end-->
+
+</body>
+</html>

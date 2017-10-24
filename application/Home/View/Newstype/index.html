@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>新闻视界_国内新闻</title>
+<link type="text/css" rel="stylesheet" media="all" href="__ROOT__/public/css/reset.css"/>
+<link type="text/css" rel="stylesheet" media="all" href="__ROOT__/public/css/layout.css"/>
+<link type="text/css" rel="stylesheet" media="all" href="__ROOT__/public/css/common.css"/>
+
+</head>
+<body>
+<!-- 通用顶部导航开始-->
+<include file="Public/header"/>
+<!--导航结束-->
+<div class="section clear">
+	<div class="side-left-680">
+		<if condition="$fetchImg3 neq NULL">
+		<div id="focus-wrapper2">
+			<ul id="focus-image">
+			<foreach name='fetchImg3' item='v'>
+				<li><a href="__APP__/Articles/index/articleId/{$v['articleId']}" target="_blank" ><img src="__ROOT__/public/{$v.imagepath}"  style="width:680px;height:320px;"/></a></li>
+			</foreach>	
+			</ul>
+			<div id="focus-mask"></div>
+			<ul id="focus-text">
+			<foreach name='fetchImg3' item='v'>
+				<li><a href="__APP__/Articles/index/articleId/{$v['articleId']}" target="_blank" >{$v.title}</a></li>
+			</foreach>	
+			</ul>
+			<ol class="clear" id="focus-num">
+				<li>1</li>
+				<li >2</li>
+				<li>3</li>
+			</ol>		
+		</div>
+		</if>
+		<script src="__ROOT__/library/jquery/jquery-1.10.0.js"></script>
+	<script>
+		$(function(){
+			var num=0;
+			var time;
+			$('#focus-image li:not(:first)').css('display','none');
+			$('#focus-text li:not(:first)').css('display','none');
+			$('#focus-num li').mouseover(function(){
+				clearInterval(time);					
+				$(this).addClass('current');
+				$(this).siblings().removeClass('current');
+				num=$(this).index();
+				$('#focus-image li:visible').css('display','none');
+				$('#focus-text li:visible').css('display','none');
+				$('#focus-image li:eq('+num+')').css('display','block');
+				$('#focus-text li:eq('+num+')').css('display','block');		
+			})				
+			function liList(){	
+				if(num==$('#focus-num li').size())num=0;
+				$('#focus-image li:eq('+num+')').css('display','block').siblings().css('display','none');
+				$('#focus-text li:eq('+num+')').css('display','block').siblings().css('display','none');
+				$('#focus-num li:eq('+num+')').addClass('current').siblings().removeClass('current');					
+				num++;
+			}
+			liList();
+			time=setInterval(liList,2000);
+			$('#focus-num li').mouseout(function(){
+				liList();
+				time=setInterval(liList,2000);
+			});			
+		})
+		//失去焦点,按文本框页码自动翻页
+		function changePage(currentValue){				
+				window.location="__APP__/NewsType/index/typeId/{$typeId}/currentPage/"+currentValue;
+			}
+	</script>
+		<div>
+			<foreach name="fetchtype" item="v">
+			<div class="news-list-item clear">
+				<if condition="$v['imagepath'] neq ''">
+				<div class="news-list-item-pic"><a href="__APP__/Articles/index/articleId/{$v['articleId']}"><img src="__ROOT__/public/{$v['imagepath']}" width="200" alt=""/></a></div>
+				<else />
+				<div class="news-list-item-pic"><a href="__APP__/Articles/index/articleId/{$v['articleId']}"><img src="__ROOT__/public/photoview/logo.png" width="200" alt=""/></a></div>
+				</if>
+				<div class="news-list-item-txt">
+					<h1><a href="__APP__/Articles/index/articleId/{$v['articleId']}"><span class="keytitle">{$v.title}</span></a></h1>
+					<if condition="$keyword neq NULL">
+					<script src="__ROOT__/library/jquery/jquery-1.10.0.js"></script>
+					<script>
+						function toRed(keyword){
+							var titleHtml=$('.keytitle').html();
+							var x =titleHtml.replace(new RegExp(keyword,"g"),"<font color='red'>"+keyword+"</font>");
+							$('.keytitle').html(x);
+						};
+						$(function(){
+							//echo $keyword={$keyword};
+							toRed('{$keyword}');
+						});
+					</script>
+					</if>
+					<p>{$v['content'],100|truncate|strip_tags}</p>
+				</div>
+			</div>
+			</foreach>
+
+			<div class="page-list clear">
+				{$pageList}
+			</div>
+	  </div>
+	</div>
+	<div class="side-right-300">
+		<h3 class="hot-title">24小时排行榜</h3>
+		<ol id="ol1" class="section-part-list-with-num">
+			<foreach name="fetchHints" item="v" key="k">       			
+       				<li><span class="top-num num{$k+1}"><if condition="$k lt 9">0</if>{$k+1}</span><a href="news.php?articleId={$v.articleId}" target="_blank">{$v['title'],20|truncate}</a></li>
+       		</foreach>
+        </ol>		
+	</div>
+</div>
+<!--版权区 start-->
+<include file="Public/foot"/>
+<!--版权区 end-->
+</body>
+</html>

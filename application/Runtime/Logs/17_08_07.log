@@ -1,0 +1,202 @@
+[ 2017-08-07T20:40:13+08:00 ] ::1 /NewsViewTP/index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.058003s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\WWW\NewsViewTP\application\Home\Controller\IndexController.class.php 第 6 行.
+NOTIC: [8] Use of undefined constant newsarticles - assumed 'newsarticles' D:\WWW\NewsViewTP\application\Home\Controller\IndexController.class.php 第 7 行.
+NOTIC: [8] Undefined index: userName D:\WWW\NewsViewTP\application\Home\Controller\IndexController.class.php 第 37 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001001s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001001s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.229013s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.229013s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.013001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.013001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.008001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.008001s ]
+
+[ 2017-08-07T20:40:27+08:00 ] ::1 /NewsViewTP/index.php/NewsType/index//typeId/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined offset: 0 D:\WWW\NewsViewTP\application\Home\Controller\NewsTypeController.class.php 第 8 行.
+NOTIC: [8] Undefined offset: 0 D:\WWW\NewsViewTP\application\Home\Controller\NewsTypeController.class.php 第 13 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: userName D:\WWW\NewsViewTP\application\Runtime\Cache\Home\3b01ea908490b84b2335299490f331b9.php 第 19 行.
+NOTIC: [8] Undefined variable: typeId D:\WWW\NewsViewTP\application\Runtime\Cache\Home\3b01ea908490b84b2335299490f331b9.php 第 101 行.
+NOTIC: [8] Undefined variable: currentPage D:\WWW\NewsViewTP\application\Runtime\Cache\Home\3b01ea908490b84b2335299490f331b9.php 第 116 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-08-07T20:40:35+08:00 ] ::1 /NewsViewTP/index.php/NewsType/index//typeId/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined offset: 0 D:\WWW\NewsViewTP\application\Home\Controller\NewsTypeController.class.php 第 8 行.
+NOTIC: [8] Undefined offset: 0 D:\WWW\NewsViewTP\application\Home\Controller\NewsTypeController.class.php 第 13 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: userName D:\WWW\NewsViewTP\application\Runtime\Cache\Home\3b01ea908490b84b2335299490f331b9.php 第 19 行.
+NOTIC: [8] Undefined variable: typeId D:\WWW\NewsViewTP\application\Runtime\Cache\Home\3b01ea908490b84b2335299490f331b9.php 第 101 行.
+NOTIC: [8] Undefined variable: currentPage D:\WWW\NewsViewTP\application\Runtime\Cache\Home\3b01ea908490b84b2335299490f331b9.php 第 116 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004000s ]
+
+[ 2017-08-07T20:40:41+08:00 ] ::1 /NewsViewTP/index.php/NewsType/index//typeId/4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined offset: 0 D:\WWW\NewsViewTP\application\Home\Controller\NewsTypeController.class.php 第 8 行.
+NOTIC: [8] Undefined offset: 0 D:\WWW\NewsViewTP\application\Home\Controller\NewsTypeController.class.php 第 13 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: userName D:\WWW\NewsViewTP\application\Runtime\Cache\Home\3b01ea908490b84b2335299490f331b9.php 第 19 行.
+NOTIC: [8] Undefined variable: typeId D:\WWW\NewsViewTP\application\Runtime\Cache\Home\3b01ea908490b84b2335299490f331b9.php 第 101 行.
+NOTIC: [8] Undefined variable: currentPage D:\WWW\NewsViewTP\application\Runtime\Cache\Home\3b01ea908490b84b2335299490f331b9.php 第 116 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-08-07T20:40:43+08:00 ] ::1 /NewsViewTP/index.php/NewsType/index//typeId/5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined offset: 0 D:\WWW\NewsViewTP\application\Home\Controller\NewsTypeController.class.php 第 8 行.
+NOTIC: [8] Undefined offset: 0 D:\WWW\NewsViewTP\application\Home\Controller\NewsTypeController.class.php 第 13 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: userName D:\WWW\NewsViewTP\application\Runtime\Cache\Home\3b01ea908490b84b2335299490f331b9.php 第 19 行.
+NOTIC: [8] Undefined variable: typeId D:\WWW\NewsViewTP\application\Runtime\Cache\Home\3b01ea908490b84b2335299490f331b9.php 第 101 行.
+NOTIC: [8] Undefined variable: currentPage D:\WWW\NewsViewTP\application\Runtime\Cache\Home\3b01ea908490b84b2335299490f331b9.php 第 116 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-08-07T20:40:47+08:00 ] ::1 /NewsViewTP/index.php/NewsType/index//typeId/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined offset: 0 D:\WWW\NewsViewTP\application\Home\Controller\NewsTypeController.class.php 第 8 行.
+NOTIC: [8] Undefined offset: 0 D:\WWW\NewsViewTP\application\Home\Controller\NewsTypeController.class.php 第 13 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: userName D:\WWW\NewsViewTP\application\Runtime\Cache\Home\3b01ea908490b84b2335299490f331b9.php 第 19 行.
+NOTIC: [8] Undefined variable: typeId D:\WWW\NewsViewTP\application\Runtime\Cache\Home\3b01ea908490b84b2335299490f331b9.php 第 101 行.
+NOTIC: [8] Undefined variable: currentPage D:\WWW\NewsViewTP\application\Runtime\Cache\Home\3b01ea908490b84b2335299490f331b9.php 第 116 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-08-07T20:40:54+08:00 ] ::1 /NewsViewTP/index.php/NewsType/index//typeId/index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 1054:Unknown column 'index.php' in 'where clause'
+ [ SQL语句 ] : SELECT count(*) FROM `newstypes` WHERE ( typeId=index.php ) LIMIT 1  
+ERR: 1054:Unknown column 'index.php' in 'where clause'
+ [ SQL语句 ] : select * from newsArticles where typeId=index.php and imagepath!='' order by hints desc limit 3
+ERR: 1054:Unknown column 'index.php' in 'where clause'
+ [ SQL语句 ] : select * from newsArticles where isDel=0 and typeId in (select typeId from newsTypes where pid=index.php)  order by dateandtime desc limit 0,10
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: userName D:\WWW\NewsViewTP\application\Runtime\Cache\Home\3b01ea908490b84b2335299490f331b9.php 第 19 行.
+NOTIC: [8] Undefined variable: typeId D:\WWW\NewsViewTP\application\Runtime\Cache\Home\3b01ea908490b84b2335299490f331b9.php 第 101 行.
+NOTIC: [8] Undefined variable: currentPage D:\WWW\NewsViewTP\application\Runtime\Cache\Home\3b01ea908490b84b2335299490f331b9.php 第 116 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-08-07T20:40:55+08:00 ] ::1 /NewsViewTP/index.php/NewsType/index//typeId/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined offset: 0 D:\WWW\NewsViewTP\application\Home\Controller\NewsTypeController.class.php 第 8 行.
+NOTIC: [8] Undefined offset: 0 D:\WWW\NewsViewTP\application\Home\Controller\NewsTypeController.class.php 第 13 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: userName D:\WWW\NewsViewTP\application\Runtime\Cache\Home\3b01ea908490b84b2335299490f331b9.php 第 19 行.
+NOTIC: [8] Undefined variable: typeId D:\WWW\NewsViewTP\application\Runtime\Cache\Home\3b01ea908490b84b2335299490f331b9.php 第 101 行.
+NOTIC: [8] Undefined variable: currentPage D:\WWW\NewsViewTP\application\Runtime\Cache\Home\3b01ea908490b84b2335299490f331b9.php 第 116 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+

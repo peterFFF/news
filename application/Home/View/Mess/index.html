@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="__ROOT__/public/css/reset.css" rel="stylesheet" type="text/css"
+	media="all" />
+<link href="__ROOT__/public/css/layout.css" rel="stylesheet" type="text/css"
+	media="all" />
+<link href="__ROOT__/public/css/common.css" rel="stylesheet" type="text/css"
+	media="all" />
+</head>
+<body>
+	<include file="Public:header"/>
+	<br />
+	<br />
+	<div class="section">
+		<div class="section clear">
+			<div style="width: 520px; float: left">
+				<h1 style="font-size: 25px; color: #3d97c0; align: center">用户评论</h1>
+				<hr color="#990000"/>
+				<br />
+				<table cellsapcing="0" border="2" width="500"
+					style="font-size: 15px; border: 2px solid #990000">
+					<foreach name="reviewsAll" item="v">
+					&nbsp;&nbsp;用户:<span style="font-size:16px;color:#990000">{$v.userName}</span>&nbsp;于{$v.dateandtime}&nbsp;发表评论
+					<hr color="#ccc" />
+					&nbsp;&nbsp;&nbsp;{$v.content}<hr color="#990000"/><br/>
+					</foreach>
+					{$pageList}
+				</table>
+				<br /> <a href="__APP__/Articles/index/articleId/{$articleId}"
+					style="font-size: 15px; color: #3d97c0">返回</a>
+
+			</div>
+			<div class="side-right-300">
+				<h3 class="hot-title">24小时排行榜</h3>
+				<ol id="ol1" class="section-part-list-with-num">
+					<foreach name='fetchHints24h' item='v' key='k'>
+						<li><span class="top-num num{$k+1}"><if condition='$k lt 9'>0</if>{$k+1}</span><a href="news.php?articleId={$v.articleId}" target="_blank">{$v["title"],18|truncate}</a></li>
+					</foreach>
+				</ol>
+			</div>
+		</div>
+	</div>
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<include file="Public:foot"/>
+</body>
+</html>

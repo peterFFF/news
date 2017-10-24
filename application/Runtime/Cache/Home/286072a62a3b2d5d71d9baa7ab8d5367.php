@@ -1,0 +1,182 @@
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>用户注册_新闻视界</title>
+<link href="/NewsViewTP/public/css/reset.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/NewsViewTP/public/css/layout.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/NewsViewTP/public/css/common.css" rel="stylesheet" type="text/css" media="all" />
+<script src="/NewsViewTP/library/jquery/jquery-1.10.0.js"></script>
+<script>
+function checkUsername(){
+	var usernameVal=$('#userName').val();
+	if(usernameVal==""){		
+		$('#userName').focus();
+		$('#promptUsername').html('用户名不能为空');
+		return false;
+	}
+    if(/^\d+$/.test(usernameVal)){
+    	$('#userName').focus();
+    	$('#promptUsername').html('用户名不能是纯数字');
+    	return false;
+    }
+    if(usernameVal.length>14 || usernameVal.length<2){
+    	$('#userName').focus();
+    	$('#promptUsername').html('用户名长度为2~14字符');
+    	return false;
+    }
+    $('#promptUsername').html('可以使用');
+};
+ function checkPassword(){
+	 var passwordVal=$("#register-input-password").val();
+	 if(passwordVal==""){
+		 $("#register-input-password").focus();
+		 $('#promptPassword').html('密码不能为空');
+		 return false;
+	 }
+	 if(passwordVal.length>14||passwordVal.length<3){
+		 $("#register-input-password").focus();
+		 $('#promptPassword').html('密码长度为3~14位字符');
+		 return false;
+	 }
+	 $('#promptPassword').html("");
+ }
+function checkConPassword(){
+	var passwordVal=$("#register-input-conpassword").val();
+	if(passwordVal==""){
+		$("#register-input-conpassword").focus();
+		$('#conpromptPassword').html('密码不能为空');
+		return false;
+	}
+	if(passwordVal.length>14||passwordVal.length<3){
+		$("#register-input-conpassword").focus();
+		$('#conpromptPassword').html('密码长度为3~14位字符');
+		return false;
+	}
+	$('#conpromptPassword').html("");
+}
+ function checkVerify(){
+	 var verifyVal=$("#register-input-verify").val();
+	 if(verifyVal==""){
+		 $("#register-input-verify").focus();
+		 $('#promptVerify').html('验证码不能为空');
+		 return false;
+	 }else{
+		 $('#promptVerify').html("");
+	 }
+ }
+	$(function(){
+		$('#userName').blur(function(){
+			return checkUsername();
+		});
+		$("#register-input-password").blur(function(){
+			return checkPassword();
+		})
+		$("#register-input-conpassword").blur(function(){
+			return checkConPassword();
+		})
+		$("#register-input-verify").blur(function(){
+			return checkVerify();
+		})
+	})
+</script>
+</head>
+<body>
+<div id="header-wrapper">
+	<div class="wrapper">
+		<div id="header">
+			<div class="side-left logo">
+				<a href="#" title="换一个角度看新闻">新闻视界</a>
+			</div>
+			<div class="side-center page-title"><span>注册</span></div>
+			<div class="side-right login-bar"><a href="/NewsViewTP/index.php/Login/index">快速登录</a><a href="/NewsViewTP/index.php" >返回首页</a></div>
+		</div>
+	</div>
+</div>
+<div id="register-wrapper">
+	<div id="register-main">
+		<div class="progress-bar-input" id="progress-bar"></div>
+		<form id="register-form" action="/NewsViewTP/index.php/Register/register" method="post">
+			<ul>
+				<li class="clear">
+					<span class="register-title side-left">账号:</span>
+					<input type="text" name="userName" id="userName" class="register-input-username side-left"/>
+					<span id="promptUsername" class="prompt side-left">请输入账号信息</span>
+				</li>
+				<li class="clear">
+					<span class="register-title side-left">密码:</span>
+					<input type="password" name="password" id="register-input-password" class="register-input-password side-left"/>
+					<span id="promptPassword"class="prompt side_left">请输入密码信息</span>
+				</li>
+				<li class="clear">
+					<span class="register-title side-left">确认密码:</span>
+					<input type="password" name="password" id="register-input-conpassword" class="register-input-password side-left"/>
+					<span id="conpromptPassword"class="prompt side_left">请输入密码信息</span>
+				</li>
+				<li class="clear">
+					<span class="register-title side-left">验证码:</span>
+					<input type="text" name="verifyCode" id="register-input-verify"  class="register-input-verify side-left"/><img src="/NewsViewTP/index.php/Register/verify" alt="请输入验证码" class="verify" />
+					<span id="promptVerify" class="prompt side_left">请输入验证码</span>
+				</li>
+				<li class="register-protocol">
+					<input type="checkbox" name="protocol" checked="checked" value="1"/>我已阅读并同意《新闻视界用户服务条款与隐私保护政策》
+				</li>
+				<li class="register-button"><input type="submit" value="注册新账号" id="button" class="register-submit-button" onclick="return checkinfo()"/></li>
+
+				<script>
+					function checkinfo(){
+						var usernameVal=$('#userName').val();
+						var passwordVal=$("#register-input-password").val();
+						var conpasswordVal=$("#register-input-conpassword").val();
+						var verifyVal=$("#register-input-verify").val();
+						if(usernameVal==""){
+							alert("用户名不能为空");
+							$('#userName').focus();
+							return false;
+						}else if(passwordVal==""){
+							alert("密码不能为空");
+							$("#register-input-password").focus();
+							return false;
+						}else if(passwordVal!=conpasswordVal){
+							alert("两次密码不一致");
+							//$("#register-input-conpassword").focus();
+							$('#promptPassword').html('两次密码不一致');
+							$('#conpromptPassword').html('两次密码不一致');
+							return false;
+						}else if(verifyVal==""){
+							alert("验证码不能为空");
+							$("#register-input-verify").focus();
+							return false;
+						}else{
+							//ajax验证
+							$.ajax({
+								type:"post",
+								url:"/NewsViewTP/index.php/Register/checkver",
+								data:"verCode="+verifyVal,
+								success:function(res){
+									//接收服务器返回的结果
+									if(res==0){
+										$("#register-input-verify").focus();
+										$('#promptVerify').html('验证码错误');
+										$('.verify').attr('src','/NewsViewTP/index.php/Register/verify/rnd='+(new Date()).getTime());
+									}else{
+										$('form').submit();
+									}
+								}
+							});
+							return false;
+						}
+					}
+				</script>
+			</ul>
+		</form>
+	</div>
+</div>
+	<script src="jquery/jquery-1.10.0.js"></script>
+	<script>
+		$('.verify').click(function(){
+			$(this).attr('src','/NewsViewTP/index.php/Register/verify/rnd='+(new Date()).getTime());
+		})
+	</script>
+</body>
+</html>
